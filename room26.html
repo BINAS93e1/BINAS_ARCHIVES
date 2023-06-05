@@ -1,0 +1,51 @@
+z<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+    background-image: url("paintings/room26/g26 blur.png");}
+
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room26/room26.mp3"></audio>
+
+  
+<div class="container">
+<a href="room27.html"> <img id="left" src="paintings/arrow.png"> </a>
+<a href="room25.html"> <img id="right" src="paintings/arrow.png"> </a>
+  
+<img id="myImage" src="paintings/room26/room26.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+     <area target="_self" alt="dekker troll" title="dekker troll"  onclick="showPopup('LOL XD', 'binas', '2022', '', 'paintings/room26/KScZLdl4_4x (2).jpeg')"  coords="159,433,615,443,633,974,185,981" shape="poly">
+    <area target="_self" alt="binaslovesyourcock" title="binaslovesyourcock"  onclick="showPopup('AINAH', 'binas', '2022', '', 'paintings/room26/shirt decine 18 (1).png')"  coords="1253,350,1628,340,1604,783,1235,787" shape="poly">
+</map>
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+    background-image: url("paintings/room15/g15\ blur.png");}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room15/room15.mp3"></audio>
+
+  
+<div class="container">
+<a href="room14.html"> <img id="onder" src="paintings/arrow.png"> </a>
+  <a href="room18.html"> <img id="boven" src="paintings/arrow.png"> </a>
+
+  
+<img id="myImage" src="paintings/room15/room15.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+        <area target="_self" alt="manwithstone" title="manwithstone"  onclick="showPopup('Sisyphus', 'Franz_Von_Stuck', '', ' ', 'paintings/room15/Franz_Von_Stuck_-_Sisyphus-495598102.jpeg')" coords="1247,577,2246,572,2246,1143,1254,1121" shape="poly">
+    <area target="_self" alt="nude" title="nude"  onclick="showPopup('Reclining_nude', 'GH_Breitner', '', ' ', 'paintings/room15/GH_Breitner,_Reclining_nude (1).jpeg')" coords="578,778,926,778,926,1010,581,1010" shape="poly">
+    <area target="_self" alt="bird" title="bird"  onclick="showPopup('birds', ' ', '', ' ', 'paintings/room15/large-dbbb0ced366acaa48e1988c0261a806bf75e26e6-4172736702.jpeg')" coords="204,744,356,785,359,1019,216,1051" shape="poly">
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

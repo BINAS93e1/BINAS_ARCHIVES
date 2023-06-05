@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  
+  <style>
+    body, html {
+    background-image: url("paintings/room8/room 8 blur.png");}
+    #myImage {
+      transition: filter 0.2s;
+    }
+  </style>
+  <script>
+    var brightnessIncreased = false;
+    
+    function toggleB() {
+      var img = document.getElementById('myImage');
+      var audio = document.getElementById('myAudio');
+      
+      if (brightnessIncreased) {
+        audio.src = "paintings/room8/lamp off.mp3"
+        setTimeout(function() {
+        img.style.filter = "brightness(100%)"
+        brightnessIncreased = false;
+      }, 300);
+        
+      }
+      else {
+        audio.src = "paintings/room8/lamp on.mp3"
+        setTimeout(function() {
+        img.style.filter = "brightness(200%)"
+        brightnessIncreased = true;
+      }, 300);
+    }
+      audio.play();
+    }
+  </script>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room8/2003 Toyota Corolla.mp3"></audio>
+
+  
+<div class="container">
+<a href="room7.html"> <img id="onder" src="paintings/arrow.png"> </a>
+  
+<img id="myImage" src="paintings/room8/room8.png" usemap="#g8map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g8map">
+     <area target="" alt="buiten" title="buiten" href="room9.html" coords="637,238,763,1005,1303,889,1250,258" shape="poly">
+    <area target="" alt="bordje" title="bordje" coords="1844,737,1804,1127,2068,1150,2049,739"
+      shape="poly" onclick="showPopup('bordje :)', '-', '-', '-', 'paintings/room8/bordje.png')">
+    <area target="" alt="lamp" title="lamp" onclick= "toggleB()"
+  coords="1468,453,1534,538" shape="rect">
+  
+</map>
+
+  <audio id="myAudio">
+    <source src="paintings/room8/lamp off.mp3" type="audio/mpeg">
+  </audio>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+  
+</body>
+</html>

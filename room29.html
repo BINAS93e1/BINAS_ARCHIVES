@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+  background-image: url("paintings/room29/g29 blur.png");
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room29/room29.mp3"></audio>
+
+  
+<div class="container">
+<a href="room30.html"> <img id="left" src="paintings/arrow.png"> </a>
+<a href="room28.html"> <img id="right" src="paintings/arrow.png"> </a>
+  
+<img id="myImage" src="paintings/room29/room29.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+      <area target="_self" alt="death" title="death" coords="965,358,1957,226,1983,1125,955,1029" shape="poly"
+      onclick="showPopup('The Triumph of Death', 'Pieter Bruegel', '1562', '-', 'paintings/room29/triumph.jpg')">
+
+    <area target="" alt="room30" title="room30" href="room30.html" coords="116,366,-1,352,-1,1162,106,1142"
+      shape="poly">
+
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

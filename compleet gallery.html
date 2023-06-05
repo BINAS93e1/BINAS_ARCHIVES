@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Art Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+ 
+
+
+</head>
+<body>
+  <h1>Art Gallery, BINAS ARCHIVES</h1>
+ <div class="navbar">
+    <a href=" ">Home</a>
+    <a href="index.html">BINAS</a>
+    <a href="#contact" id="deathGripsButton">I Love Death Grips</a>
+    <a href="#" id="createPaintingButton" onclick="showPaintingModal()">Create Your Own Painting</a>
+    <img src="paintings/art/logo.png" alt="Logo" class="logo">
+  </div>
+  
+<div id="paintingModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="hidePaintingModal()">&times;</span>
+    <h2>Create Your Own Painting</h2>
+    <canvas id="paintingCanvas"></canvas>
+    <div>
+      <label for="brushSize">Brush Size:</label>
+      <input type="range" id="brushSize" min="1" max="20" value="5" onchange="updateBrushSize()">
+    </div>
+    <div>
+      <label for="brushColor">Brush Color:</label>
+      <input type="color" id="brushColor" value="#000000" onchange="updateBrushColor()">
+    </div>
+    <div>
+      <label for="paintingName">Name:</label>
+      <input type="text" id="paintingName" placeholder="Enter a name for your painting">
+    </div>
+    <div>
+      <label for="paintingDescription">Description:</label>
+      <textarea id="paintingDescription" placeholder="Enter a description for your painting"></textarea>
+    </div>
+    <button onclick="savePainting()">Save</button>
+  </div>
+</div>
+  
+<a href="#" id="cornerImage" onclick="moveImage(this)">
+  <img src="paintings/art/funnylil.png" alt="olifantskreeftje" id="cornerImageImg">
+</a>
+<audio id="clickSound">
+  <source src="paintings/art/click-sound.mp3" type="audio/mpeg">
+</audio>
+
+  <div id="popupContainer">
+    <div id="popupContent">
+      <button id="closeButton">&times;</button>
+      <canvas id="paintingCanvas"></canvas>
+    </div>
+  </div>
+
+ <div id="popupContainer">
+  <div id="popupContent">
+    <button id="closeButton">&times;</button>
+    <canvas id="paintingCanvas" width="800" height="600"></canvas>
+  </div>
+</div>
+
+<div id="paintingModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="hidePaintingModal()">&times;</span>
+    <h2>Create Your Own Painting</h2>
+    <canvas id="paintingCanvas" width="800" height="600"></canvas>
+    <div>
+      <label for="paintingName">Name:</label>
+      <input type="text" id="paintingName" placeholder="Enter a name for your painting">
+    </div>
+    <div>
+      <label for="paintingDescription">Description:</label>
+      <textarea id="paintingDescription" placeholder="Enter a description for your painting"></textarea>
+    </div>
+    <button onclick="savePainting()">Save</button>
+  </div>
+</div>
+
+
+<script>
+  function moveImage(element) {
+    var imageWidth = element.offsetWidth;
+    var imageHeight = element.offsetHeight;
+
+    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    var maxX = viewportWidth - imageWidth;
+    var maxY = viewportHeight - imageHeight;
+
+    var newX = Math.floor(Math.random() * maxX);
+    var newY = Math.floor(Math.random() * maxY);
+    
+    element.style.transition = 'transform 0.5s';
+    element.style.right = newX + 'px';
+    element.style.bottom = newY + 'px';
+  }
+
+  function createDuplicate() {
+    var cornerImage = document.getElementById('cornerImage');
+    var duplicateImage = document.createElement('img');
+    duplicateImage.src = cornerImage.firstElementChild.src;
+    duplicateImage.alt = cornerImage.firstElementChild.alt;
+    duplicateImage.classList.add('duplicate-image');
+    duplicateImage.style.position = 'fixed';
+    duplicateImage.style.transition = 'transform 0.5s';
+    duplicateImage.style.right = cornerImage.style.right;
+    duplicateImage.style.bottom = cornerImage.style.bottom;
+
+    document.body.appendChild(duplicateImage);
+  }
+
+  const clickSound = document.getElementById('clickSound');
+  const cornerImage = document.getElementById('cornerImageImg');
+  cornerImage.addEventListener('click', () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+    moveImage(cornerImage);
+
+    var duplicateImages = document.getElementsByClassName('duplicate-image');
+    for (var i = 0; i < duplicateImages.length; i++) {
+      moveImage(duplicateImages[i]);
+    }
+
+    if (cornerImage.dataset.clickCount) {
+      cornerImage.dataset.clickCount++;
+    } else {
+      cornerImage.dataset.clickCount = 1;
+    }
+
+    if (cornerImage.dataset.clickCount % 5 === 0) {
+      createDuplicate();
+    }
+  });
+</script>
+
+
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <video id="videoPlayer" controls>
+      <source src="paintings/art/DeathGrips.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
+
+<script>
+  var deathGripsButton = document.getElementById("deathGripsButton");
+  var videoModal = document.getElementById("videoModal");
+  var videoPlayer = document.getElementById("videoPlayer");
+  var closeButton = document.getElementsByClassName("close")[0];
+
+  deathGripsButton.addEventListener("click", function() {
+    videoModal.style.display = "block";
+    videoPlayer.play();
+  });
+
+  closeButton.addEventListener("click", function() {
+    videoModal.style.display = "none";
+    videoPlayer.pause();
+    videoPlayer.currentTime = 0;
+  });
+</script>
+<div class="main">
+  <p>Some text some text some text some text..</p>
+</div>
+  <hr class="custom-bar">
+
+ <div class="sidebar-left">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet tortor a turpis ullamcorper efficitur.</p>
+  </div>
+
+
+  <div class="sidebar-right">
+    <h2>Contact</h2>
+    <p>Email: info@example.com</p>
+    <p>Phone: 123-456-7890</p>
+  </div>
+  
+  <div id="gallery">
+    <div class="image-container">
+      <img src="paintings/room1/gogh.jpg" alt="Image 1" onclick="showImage('paintings/room1/gogh.jpg', 'Image 1', 'Description 1')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room1/iwan.jpg" alt="Image 2" onclick="showImage('paintings/room1/iwan.jpg', 'Image 2', 'Description 2')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room1/storm.jpg" alt="Image 3" onclick="showImage('paintings/room1/storm.jpg', 'Image 3', 'Description 3')">
+    </div>
+  </div>
+    <div id="gallery">
+    <div class="image-container">
+      <img src="paintings/room1/williamturner.jpg" alt="Image 1" onclick="showImage('paintings/room1/williamturner.jpg', 'Image 1', 'Description 1')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room2/kate1.jpg" alt="Image 2" onclick="showImage('paintings/room2/kate1.jpg', 'Image 2', 'Description 2')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room2/kate2.jpg" alt="Image 3" onclick="showImage('paintings/room2/kate2.jpg', 'Image 3', 'Description 3')">
+    </div>
+  </div>
+    <div id="gallery">
+    <div class="image-container">
+      <img src="paintings/room2/Feldblumen in einer Kiepe.jpg" alt="Image 1" onclick="showImage('paintings/room2/Feldblumen in einer Kiepe.jpg', 'Image 1', 'Description 1')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room3/boy.png" alt="Image 2" onclick="showImage('paintings/room3/boy.png', 'Image 2', 'Description 2')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room3/owl.jpg" alt="Image 3" onclick="showImage('paintings/room3/owl.jpg', 'Image 3', 'Description 3')">
+    </div>
+  </div>
+  <div id="gallery">
+    <div class="image-container">
+      <img src="paintings/room3/pig.jpg" alt="Image 1" onclick="showImage('paintings/room3/pig.jpg', 'Image 1', 'Description 1')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room3/witch.jpg" alt="Image 2" onclick="showImage('paintings/room3/witch.jpg', 'Image 2', 'Description 2')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room4/Bathers_with_a_turtle.jpeg" alt="Image 3" onclick="showImage('paintings/room4/Bathers_with_a_turtle.jpeg', 'Image 3', 'Description 3')">
+    </div>
+  </div>
+    <div id="gallery">
+    <div class="image-container">
+      <img src="paintings/room4/julius bissier.jpeg" alt="Image 1" onclick="showImage('paintings/room4/julius bissier.jpeg', 'Image 1', 'Description 1')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room5/Reclining Nude.jpg" alt="Image 2" onclick="showImage('paintings/room5/Reclining Nude.jpg', 'Image 2', 'Description 2')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room5/Tahitian landscape.jpg" alt="Image 3" onclick="showImage('paintings/room5/Tahitian landscape.jpg', 'Image 3', 'Description 3')">
+    </div>
+  </div>
+    <div id="gallery">
+    <div class="image-container">
+      <img src="paintings/room6/Claude_Monet_-_Water_Lilies_(oil_on_canvas)_-_(MeisterDrucke-1426846).jpeg" alt="Image 1" onclick="showImage('paintings/room6/Claude_Monet_-_Water_Lilies_(oil_on_canvas)_-_(MeisterDrucke-1426846).jpeg', 'Image 1', 'Description 1')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room6/depression-abstract-painting-25-3911668437.jpeg" alt="Image 2" onclick="showImage('paintings/room6/depression-abstract-painting-25-3911668437.jpeg', 'Image 2', 'Description 2')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room6/number17.jpeg" alt="Image 3" onclick="showImage('paintings/room6/number17.jpeg', 'Image 3', 'Description 3')">
+    </div>
+  </div>
+  <div id="gallery">
+    <div class="image-container">
+      <img src="paintings/room6/peonias series.jpeg" alt="Image 1" onclick="showImage('paintings/room6/peonias series.jpeg', 'Image 1', 'Description 1')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room11/frans.jpg" alt="Image 2" onclick="showImage('paintings/room11/frans.jpg', 'Image 2', 'Description 2')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room1/storm.jpg" alt="Image 3" onclick="showImage('paintings/room1/storm.jpg', 'Image 3', 'Description 3')">
+    </div>
+  </div>
+    <div id="gallery">
+    <div class="image-container">
+      <img src="paintings/room1/williamturner.jpg" alt="Image 1" onclick="showImage('paintings/room1/williamturner.jpg', 'Image 1', 'Description 1')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room2/kate1.jpg" alt="Image 2" onclick="showImage('paintings/room2/kate1.jpg', 'Image 2', 'Description 2')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room2/kate2.jpg" alt="Image 3" onclick="showImage('paintings/room2/kate2.jpg', 'Image 3', 'Description 3')">
+    </div>
+  </div>
+    <div id="gallery">
+    <div class="image-container">
+      <img src="paintings/room2/Feldblumen in einer Kiepe.jpg" alt="Image 1" onclick="showImage('paintings/room2/Feldblumen in einer Kiepe.jpg', 'Image 1', 'Description 1')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room3/boy.png" alt="Image 2" onclick="showImage('paintings/room3/boy.png', 'Image 2', 'Description 2')">
+    </div>
+    <div class="image-container">
+      <img src="paintings/room3/owl.jpg" alt="Image 3" onclick="showImage('paintings/room3/owl.jpg', 'Image 3', 'Description 3')">
+    </div>
+  </div>
+
+  <div id="lightbox">
+    <div id="lightboxContent">
+      <span class="close" onclick="hideImage()">&times;</span>
+      <div id="lightboxNavigation">
+        <button class="prevButton" onclick="prevImage()">&#8249;</button>
+        <button class="nextButton" onclick="nextImage()">&#8250;</button>
+      </div>
+      <img id="lightboxImage" src="" alt="">
+      <div id="lightboxCaption">
+        <h3></h3>
+        <p></p>
+      </div>
+    </div>
+  </div>
+   <script src="gallery.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room4.css">
+  <script src="soundeffectplayer.js"></script>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room4/room4.mp3"></audio> 
+  
+<div class="container">
+    <a href="room5.html">
+      <img id="left" src="paintings/arrow.png" >
+    </a>
+  
+<img id="myImage" src="paintings/room4/room4.png" usemap="#g1map" alt="my image" class="center">
+  
+</div>
+  
+
+  
+<map name="g1map">
+      <area target="_self" alt="bathers_with_a_turtle" title="bathers_with_a_turtle"  coords="1544,567,2001,479,2011,936,1542,885" shape="poly" onclick="showPopup('Bathers_with_a_turtle', 'Henri Matisse', '1907 to 1908', '', 'paintings/room4/Bathers_with_a_turtle.jpeg')">
+      <area target="_self" alt="julius bissier" title="julius bissier"  coords="83,768,343,758,335,595,85,577" shape="poly" onclick="showPopup('doodle', 'julius bissier', '', '', 'paintings/room4/julius bissier.jpeg')">
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+	<script>
+		// Function to show the popup with the painting information
+function showPopup(name, artist, year, origin, image) {
+    // Set the painting information
+    document.getElementById("painting-name").innerHTML = name;
+    document.getElementById("artist").innerHTML = artist;
+    document.getElementById("year").innerHTML = year;
+    document.getElementById("origin").innerHTML = origin;
+    document.querySelector(".popup-image").setAttribute("src", image);
+
+    // Show the popup
+    document.getElementById("popup").style.display = "flex";
+}
+
+// Function to close the popup
+function closePopup() {
+    // Hide the popup
+    document.getElementById("popup").style.display = "none";
+}
+
+// Add event listener to the close button
+document.querySelector(".close-button").addEventListener("click", closePopup);
+
+// Add event listener to the black transparent box to close the popup
+document.getElementById("popup").addEventListener("click", function(event) {
+    if (event.target == document.getElementById("popup")) {
+        closePopup();
+    }
+});
+  </script>
+  
+  
+ 
+
+<div id="mainImage" onclick="openFullscreenImage()">
+  <img src="binashd1.jpeg" alt="Thumbnail Image">
+</div>
+
+<div id="fullscreenImage">
+  <img src="large-image.png" alt="Fullscreen Image" usemap="#imageMap">
+  <map name="imageMap">
+    <area target="_self" alt="start index" title="start index" href="index.html" coords="68,841,126,922" shape="rect">
+    <area target="_self" alt="room4" title="room4" href="room4.html" coords="127,903,219,951" shape="rect">
+    <area target="_self" alt="room5" title="room5" href="room5.html" coords="220,866,328,926" shape="rect">
+    <area target="_self" alt="stairs" title="stairs" href="room7.html" coords="367,871,410,911" shape="rect">
+    <area target="_self" alt="downstairs" title="downstairs" href="room8.html" coords="" shape="rect">
+    <area target="_self" alt="room15" title="room15" href="room15.html" coords="276,747,420,789" shape="rect">
+    <area target="_self" alt="room" title="room" href="??" coords="91,667,162,806" shape="rect">
+    <area target="_self" alt="empty1" title="empty1" href="??" coords="164,763,238,830" shape="rect">
+    <area target="_self" alt="empty2" title="empty2" href="??" coords="227,685,274,729" shape="rect">
+    <area target="_self" alt="empty3" title="empty3" href="??" coords="" shape="rect">
+    <area target="_self" alt="empty4" title="empty4" href="??" coords="414,899,449,944" shape="rect">
+    <area target="_self" alt="empty5" title="empty5" href="??" coords="276,698,323,744" shape="rect">
+    <area target="_self" alt="empty6" title="empty6" href="??" coords="516,607,567,665" shape="rect">
+    <area target="_self" alt="room12" title="room12" href="this is not room 12 😭" coords="381,668,545,744" shape="rect">
+    <area target="_self" alt="room14" title="room14" href="room14.html" coords="358,606,408,665" shape="rect">
+    <area target="_self" alt="room??" title="room??" href="?????????" coords="266,586,356,632" shape="rect">
+    <area target="_self" alt="room16" title="room16" href="room16.html" coords="229,635,323,682" shape="rect">
+</map>
+</div>
+
+<script>
+  function openFullscreenImage() {
+    var fullscreenImage = document.getElementById('fullscreenImage');
+    fullscreenImage.classList.toggle('active');
+  }
+</script>
+
+  
+  <script>
+		function updateCoords() {
+			// Get the original image size
+			var img = document.getElementById("myImage");
+			var originalWidth = img.naturalWidth;
+			var originalHeight = img.naturalHeight;
+
+			// Get the current image size
+			var currentWidth = img.clientWidth;
+			var currentHeight = img.clientHeight;
+
+			// Calculate the scale factor
+			var scaleFactorX = currentWidth / originalWidth;
+			var scaleFactorY = currentHeight / originalHeight;
+
+			// Update the coordinates of the area tags
+			var areas = document.getElementsByTagName("area");
+			for (var i = 0; i < areas.length; i++) {
+				var coords = areas[i].getAttribute("coords").split(",");
+				for (var j = 0; j < coords.length; j++) {
+					if (j % 2 == 0) {
+						coords[j] = Math.round(parseInt(coords[j]) * scaleFactorX);
+					} else {
+						coords[j] = Math.round(parseInt(coords[j]) * scaleFactorY);
+					}
+				}
+				areas[i].setAttribute("coords", coords.join(","));
+			}
+		}
+
+		window.onload = updateCoords;
+		window.onresize = updateCoords;
+	</script>
+</body>
+</html>

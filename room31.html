@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+  background-image: url("paintings/room31/g31 blur.png");
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room31/room31.mp3"></audio>
+
+  
+<div class="container">
+<a href="room30.html"> <img id="onder" src="paintings/arrow.png"> </a>
+<a href="room32.html"> <img id="boven" src="paintings/arrow.png"> </a>
+<a href="room20.html"> <img id="right" src="paintings/arrow.png"> </a>
+  
+<img id="myImage" src="paintings/room31/room31.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+     <area target="_self" alt="clovis gaugin asleep" title="Clovis Gaugin asleep" coords="3,209,893,211,882,1057,1,1085" shape="poly"
+      onclick="showPopup('Clovis Gaugin asleep', 'Paul Gaugin', '1884', 'France', 'paintings/room31/asleep.jpg')">
+  
+    <area target="_self" alt="paris" title="paris"  coords="1746,501,2158,507,2160,821,1748,832" shape="poly" 
+      onclick="showPopup('NOOO PARIS :((', '-', '2012', 'paris', 'paintings/room31/paris2024.jpg')">
+
+    <area target="" alt="room32" title="room32" href="room32.html" coords="963,1462,955,20,1593,64,1597,1462" shape="poly">
+</map>
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+    background-image: url("paintings/room17/g17\ blur.png");}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room17/room17.mp3"></audio>
+
+  
+<div class="container">
+<a href="room20.html"> <img id="boven" src="paintings/arrow.png"> </a>
+<a href="room16.html"> <img id="right" src="paintings/arrow.png"> </a>
+  
+<img id="myImage" src="paintings/room17/room17.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+    <area target="" alt="bird1" title="bird1"  coords="-1,932,218,887,208,599,-3,563" shape="poly"
+      onclick="showPopup('bird', 'bird ', '', ' ', 'paintings/room17/bird1.jpeg')" >
+    <area target="" alt="bird1bird1" title="bird1bird1"  coords="929,879,1275,877,1279,583,927,579" shape="poly"
+      onclick="showPopup('bird', 'bird ', '', ' ', 'paintings/room17/bird1bird1.jpeg')" >
+    <area target="" alt="bird1bird1bird1" title="bird1bird1bird1"  coords="1985,901,1987,619,2247,593,2247,952" shape="poly"
+      onclick="showPopup('bird', 'bird ', '', ' ', 'paintings/room17/bird1bird1bird1.jpeg')" >
+    <area target="" id="slideButton" alt="birdfly" title="birdfly" onclick="slideImageToCorner()" coords="552,1322,605,1171,619,1016,585,907,673,893,582,867,510,853,452,928,430,1034,432,1171,456,1276,486,1316" shape="poly">
+</map>
+
+<script>
+	function slideImageToCorner() {
+		var newImageSrc = "paintings/room17/room17 (1).png";
+
+		var myImage = document.getElementById("myImage");
+		myImage.src = newImageSrc;
+
+		var slidingImage = document.createElement("img");
+		slidingImage.src = "paintings/room17/sliding-image.png";
+		slidingImage.classList.add("sliding-image");
+		document.body.appendChild(slidingImage);
+
+		var startX = 518; 
+		var startY = 733;
+		var endX = window.innerWidth - slidingImage.width; 
+		var endY = 0; 
+		var duration = 2000;
+
+		slidingImage.style.left = startX + "px";
+		slidingImage.style.top = startY + "px";
+
+		
+		slidingImage.style.transition = "transform " + (duration / 1000) + "s ease-in-out";
+		slidingImage.style.transform = "translate(" + (endX - startX) + "px, " + (endY - startY) + "px)";
+
+	    
+    var sound = new Audio("paintings/room17/Great blue heron call (1).mp3");
+    sound.play();
+
+   
+    setTimeout(function() {
+        slidingImage.parentNode.removeChild(slidingImage);
+    }, duration);
+
+   
+    var slideButton = document.getElementById("slideButton");
+    slideButton.onclick = null;
+}
+</script>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+
+  
+  
+</body>
+</html>

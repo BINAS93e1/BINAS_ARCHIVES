@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+    <style>
+    body, html {
+    background-image: url("paintings/room5/g5 blur.png");}
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop src="paintings/room5/room5.mp3"></audio> 
+
+<div class="container">
+   <a href="room6.html">
+      <img id="left" src="paintings/arrow.png">
+    </a>
+    <a href="room4.html">
+      <img id="right" src="paintings/arrow.png">
+     </a>
+
+  
+ 
+  
+<img id="myImage" src="paintings/room5/room5.png" usemap="#g1map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g1map">
+       <area target="_self" alt="omaggio Zinaida-Serebriako" title="omaggio Zinaida-Serebriako"  coords="546,753,1402,753,1400,236,546,236" shape="poly" onclick="showPopup('Reclining Nude', 'maggio Zinaida-Serebriako', '', ' ', 'paintings/room5/Reclining Nude.jpg')">
+    <area target="_self"  class="glow" alt="meat" title="meat"  coords="844,209,1112,205,1112,-4,838,0" shape="poly" onclick="playSound('paintings/room5/meat.mp3')">
+    <area target="_self" class="glow" alt="paul gauguin" title="paul gauguin" coords="1470,341,2199,343,2195,-1,1478,-1" shape="poly" onclick="showPopup('Tahitian landscape', 'paul gauguin', '', ' ', 'paintings/room5/Tahitian landscape.jpg')">
+    <area target="_self" class="glow" alt="bed" title="bed" coords="190,480,676,476,674,557,713,619,734,739,367,744,307,703,249,693,187,685,149,686,135,677,97,679,140,610,179,571" shape="poly">
+    <area target="_self" class="glow" alt="dark" title="under the bed" coords="311,1461,395,1445,524,1443,685,1443,790,1449,844,1484,923,1478,1013,1463,1114,1457,1257,1461,1369,1476,1428,1496,1472,1466,1540,1470,1480,1405,1430,1385,1297,1353,1275,1405,1222,1425,1210,1403,1142,1393,1084,1395,1035,1387,1021,1415,989,1460,870,1474,812,1462,760,1409,671,1369,518,1345,395,1337,307,1335" shape="poly" onclick="jumpscare();" >
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+
+  
+
+
+    
+  <img id= "jumpscare" src="paintings/room5/jumpscare.jpg">
+  <audio id="scream" src="paintings/room5/scream.mp3">
+
+  <script>
+    function jumpscare(){
+      var jumpscare = document.getElementById("jumpscare");
+      jumpscare.style.visibility="visible";
+      var audio = document.getElementById("scream");
+        audio.play();
+
+    }
+  </script>
+  
+</body>
+</html>

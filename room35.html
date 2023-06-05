@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+  background-image: url("paintings/room35/g35 blur.png");}
+    #myImage {
+    opacity: 0;}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room35/room35.mp3"></audio>
+
+  
+<div class="container">
+<a href="room34.html"> <img id="onder" src="paintings/arrow.png"> </a>
+<img id="canvas" src="paintings/golden canvas.png" class="center">
+  
+  <video autoplay loop muted play-inline class="center">
+  <source src="paintings/room35/g35.mp4" type="video/mp4"> 
+ </video>
+  
+<img id="myImage" src="paintings/room35/g35 frame.jpg" usemap="#g35map" alt="my image" class="center">
+</div>
+
+  
+<map name="g35map">
+  <area target="_self" alt="gallery" title="gallery" href="compleet gallery.html" coords="1442,981,1651,1068" shape="rect">
+    <area target="_self" alt="room23" title="room23" href="room23.html" coords="288,1199,3,1312,1,1485,1214,1495,1915,1499,1721,1350,1589,1399,824,1288,697,1228" shape="poly">
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

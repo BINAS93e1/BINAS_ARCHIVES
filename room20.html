@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+  background-image: url("paintings/room20/g20 blur.png");
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room20/room20.mp3"></audio>
+
+  
+<div class="container">
+<a href="room17.html"> <img id="onder" src="paintings/arrow.png"> </a>
+<a href="room19.html"> <img id="boven" src="paintings/arrow.png"> </a>
+<a href="room31.html"> <img id="left" src="paintings/arrow.png"> </a>
+  
+<img id="myImage" src="paintings/room20/room20.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+     <area target="_self" alt="painting" title="painting" onclick="showPopup('the_raft_of_the_medusa', 'theodore_gericault ', '1818', '', 'paintings/room20/theodore_gericault-the_raft_of_the_medusa-1818-trivium-art-history-176509265.jpeg')" coords="0,608,889,612,891,1152,-2,1146,-4,1138,4,1148" shape="poly">
+    <area target="_self" alt="long1" title="long1" onclick="showPopup('february', 'jan_kamphuijsen', '', '', 'paintings/room20/4ed92e98461ad7d70b79b1f5ee9e8f87--february-month-wall-treatments-1716571452.jpeg')" coords="1374,1240,1475,1247,1471,268,1372,266" shape="poly">
+    <area target="_self" alt="long2" title="long2" onclick="showPopup('december', 'jan_kamphuijsen ', '', ' ', 'paintings/room20/jan_kamphuijsen_december-2226048321.jpeg')" coords="1608,1244,1602,261,1513,259,1509,1240,1559,1240" shape="poly">
+    <area target="_self" alt="birds" title="birds" onclick="showPopup('furisode with a myriad of flying cranes', 'unknown ', '', 'japan', 'paintings/room20/AK-RAK-2009-3-3.jpeg')" coords="1740,594,2103,585,2095,1063,1738,1055" shape="poly">
+    <area target="_self" alt="enter" title="enter" href="room19.html" coords="994,791,1269,791,1267,1240,994,1236" shape="poly">
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

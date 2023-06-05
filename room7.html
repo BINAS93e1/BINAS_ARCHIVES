@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+    background-image: url("paintings/room7/room7 blur.png");}
+    #myImage {
+    opacity: 0;}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room7/2005 Toyota Corolla.mp3"></audio>
+
+  
+<div class="container">
+<a href="room6.html"> <img id="onder" src="paintings/arrow.png"> </a>
+
+  <video autoplay loop play-inline class="center">
+  <source src="paintings/room7/g7 animated.mp4" type="video/mp4"> 
+ </video>
+  
+<img id="myImage" src="paintings/room7/room7.png" usemap="#g7map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g7map">
+     <area target="" alt="beneden" title="beneden" href="room8.html" coords="1434,593,2239,680,2170,1495,967,1254" shape="poly">
+    <area target="" alt="boven" title="boven" href="room12.html" coords="1693,538,1426,544,1013,1030,522,921,536,4,1190,4,1428,288,1552,298" shape="poly">
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+	<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

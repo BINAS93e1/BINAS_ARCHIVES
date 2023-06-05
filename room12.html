@@ -1,0 +1,55 @@
+z<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+    background-image: url("paintings/room12/g12\ blur.png");}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room12/room12.mp3"></audio>
+
+  
+<div class="container">
+<a href="room7.html"> <img id="onder" src="paintings/arrow.png"> </a>
+<a href="room13.html"> <img id="left" src="paintings/arrow.png"> </a>
+<a href="room14.html"> <img id="right" src="paintings/arrow.png"> </a>
+  
+<img id="myImage" src="paintings/room12/room12.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+     <map name="image-map">
+    <area target="_self" alt="painting snake" title="painting snake"  coords="116,960,486,928,480,459,110,417" shape="poly" onclick="showPopup('sin', 'franz von stuck', '', ' ', 'paintings/room12/Franz_von_Stuck_-_Sensuality_c1891_-_(MeisterDrucke-820378).jpeg')">
+    <area target="_self" alt="sleep" title="sleep" coords="744,892,997,874,991,489,750,475" shape="poly" onclick="showPopup('the Red kimono', 'Breitner', '', ' ', 'paintings/room12/Breitner_-_The_Red_Kimono.jpeg')">
+    <area target="_self" alt="wake up" title="wake up" coords="1068,882,1060,660,1289,672,1299,862" shape="poly" onclick="showPopup('doedskamp', 'edvard munch', '', ' ', 'paintings/room12/edvard-munch-doedskamp-1915-2297939544.jpeg')">
+    <area target="_self" alt="nude" title="nude"  coords="1557,842,1557,703,1842,681,1832,844" shape="poly" onclick="showPopup(' Liggend Naakt', ' George Hendrik Breitner', '', ' ', 'paintings/room12/nudepainting.png')">
+    <area target="_self" alt="ilovebacon" title="ilovebacon" coords="1941,558,2168,546,2171,842,1949,840" shape="poly" onclick="showPopup('lying figure', 'bacon', '1966', ' ', 'paintings/room12/francis-bacon-lying-figure-1966 (1).webp')">
+</map>
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,58 @@
+z<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+    background-image: url("paintings/room24/g24 blur.png");}
+    #myImage {
+    opacity: 0;}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room24/room24.mp3"></audio>
+
+  
+<div class="container">
+<a href="room16.html"> <img id="onder" src="paintings/arrow.png"> </a>
+<a href="room25.html"> <img id="boven" src="paintings/arrow.png"> </a>
+  
+ <video autoplay loop muted play-inline class="center">
+  <source src="paintings/room24/g24 animated.mp4" type="video/mp4"> 
+ </video>
+  
+<img id="myImage" src="paintings/room12/room12.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+     <area target="_self" alt="painting1" title="painting1" onclick="showPopup('doodle', 'julius bissier', '', '', 'paintings/room24/julius bissier.jpeg')" coords="88,532,301,499,273,199,54,207" shape="poly">
+    <area target="_self" alt="painting2" title="painting2" onclick="showPopup('zelfportait voor schilderezel', 'max beckmann', '', '', 'paintings/room24/max beckmann zelfportait voor schilderezel.jpeg')" coords="372,491,555,477,547,197,362,199" shape="poly">
+    <area target="_self" alt="painting3" title="painting3" onclick="showPopup('giovanni-bellini-dogen', 'leonardo-tablosu', '', '', 'paintings/room24/giovanni-bellini-dogen-leonardo-tablosu-149357397.jpeg')" coords="583,459,748,434,746,203,579,201" shape="poly">
+    <area target="_self" alt="painting4" title="painting4" onclick="showPopup('LandscapeScene_from_Thanatopsis', 'Asher_Brown_Durand', '1850', '', 'paintings/room24/Asher_Brown_Durand_-_LandscapeScene_from_Thanatopsis_1850_-_(MeisterDrucke-847334).jpeg')" coords="1400,746,1426,55,1893,15,2243,1,2239,1036" shape="poly">
+    <area target="_self" alt="enter" title="enter" href="room25.html" coords="823,681,1135,620,1131,30,875,52,801,165" shape="poly">
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

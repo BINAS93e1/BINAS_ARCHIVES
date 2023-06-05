@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+  background-image: url("paintings/room32/g32 blur.png");
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room32/room32.mp3"></audio>
+
+  
+<div class="container">
+<a href="room31.html"> <img id="onder" src="paintings/arrow.png"> </a>
+
+  
+<img id="myImage" src="paintings/room32/room32.png" usemap="#g32map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g32map">
+    <area target="_self" alt="forrest" title="forrest" coords="192,117,691,215,699,550,198,568" shape="poly"
+      onclick="showPopup('The fog is rising', '-', '2004', 'forrest', 'paintings/room32/forrest.png')">
+  
+    <area target="_self" alt="zeespin" title="zeespin"  coords="961,572,961,942,1321,878,1319,612" shape="poly" 
+      onclick="showPopup('Colossendeis colossea', '-', '2001', 'Germany', 'paintings/room32/zeespin.jpg')">
+  
+    <area target="_self" alt="zeespinbinas" title="zeespinbinas"  coords="1221,157,1426,223,1426,417,1219,395" shape="poly"
+      onclick="showPopup('Colossendeis colossea <3', 'Binas93e1', '2022', '-', 'paintings/room32/zeespinbinas.jpg')">
+  
+    <area target="_self" alt="daantje" title="daantje" coords="1681,393,1679,658,2076,670,2072,300" shape="poly" 
+      onclick="showPopup('Daantje', 'Binas93e1', '2022', 'Drenthe', 'paintings/room32/daantje.jpg')">
+  
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

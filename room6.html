@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+    background-image: url("paintings/room6/g6 blur.png");}
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop src="paintings/room6/room6.mp3"></audio> 
+  
+  <div class="container">
+    <a href="room5.html">
+      <img id="right" src="paintings/arrow.png">
+     </a>
+  <a href="room7.html">
+      <img id="boven" src="paintings/arrow.png">
+     </a>
+<img id="myImage" src="paintings/room6/room6.png" usemap="#g6map" alt="my image" class="center">
+  
+</div>
+
+  
+
+<map name="g6map">
+      <area target="_self" alt="monet" title="monet" coords="303,1004,578,941,570,639,307,553" shape="poly" onclick="showPopup('water lily', 'monet', '', ' ', 'paintings/room6/Claude_Monet_-_Water_Lilies_(oil_on_canvas)_-_(MeisterDrucke-1426846).jpeg')"> 
+      <area target="_self" alt="suicide" title="suicide" onclick="showPopup('depression-abstract-painting', '', '', ' ', 'paintings/room6/depression-abstract-painting-25-3911668437.jpeg')"coords="774,915,973,915,979,704,778,696" shape="poly">
+     <area target="_self" alt="expencive" title="expencive" coords="1373,913,1569,911,1565,714,1371,710" shape="poly" onclick="showPopup('number17', 'Jackson Pollock', '1948', ' ', 'paintings/room6/number17.jpeg')">
+      <area target="_self" alt="also much money" title="also much money"  coords="1812,855,2120,853,2116,595,1800,71" shape="poly"onclick="showPopup('peonias series', ' ', ' ', ' ', 'paintings/room6/peonias series.jpeg')">
+    <area target="_self" alt="enters" title="enters" href="room7.html" coords="1057,974,1289,976,1257,929,1271,696,1086,682,1094,917" shape="poly">
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+	<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

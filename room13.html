@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+    background-image: url("paintings/room13/g13\ blur.png");}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room13/room13.mp3"></audio>
+
+  
+<div class="container">
+
+<a href="room28.html"> <img id="left" src="paintings/arrow.png"> </a>
+<a href="room12.html"> <img id="right" src="paintings/arrow.png"> </a>
+  
+<img id="myImage" src="paintings/room13/room13.png" usemap="#g13map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g13map">
+       <area target="" alt="sleep" title="sleep"  coords="1739,351,2140,233,2164,1100,1747,1040"
+         shape="poly" onclick="showPopup('the Red kimono', 'Breitner', '', ' ', 'paintings/room12/Breitner_-_The_Red_Kimono.jpeg')">
+    <area target="" alt="sin" title="sin" onclick="showPopup('sin', 'franz von stuck', '', ' ', 'paintings/room12/Franz_von_Stuck_-_Sensuality_c1891_-_(MeisterDrucke-820378).jpeg')" coords="1170,959,1399,986,1392,413,1165,449"  shape="poly">
+    <area target="" alt="sin" title="sin"  coords="221,855,668,845,658,657,223,652" shape="poly" onclick="showPopup('sin', 'franz von stuck', '', ' ', 'paintings/room13/Franz von Stuck sin.jpeg')">
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

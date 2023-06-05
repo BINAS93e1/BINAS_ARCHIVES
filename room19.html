@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+    background-image: url("paintings/room19/g19\ blur.png");}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room19/room19.mp3"></audio>
+
+  
+<div class="container">
+<a href="room20.html"> <img id="onder" src="paintings/arrow.png"> </a>
+
+  
+<img id="myImage" src="paintings/room19/room19.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+     <area target="_self" alt="girl" title="girl" onclick="showPopup('Madeleine_in_the_Bois', 'Emile_Bernard ', '1888', ' ', 'paintings/room19/Emile_Bernard_-_Madeleine_in_the_Bois_dAmour_1888_-_(MeisterDrucke-738849).jpeg')" coords="6,1099,726,1024,748,438,4,340" shape="poly">
+    <area target="_self" alt="painting" title="painting" onclick="showPopup('Maas en Sint Pieter', 'Nop Briex ', '', 'Tilburg, Nederland ', 'paintings/room19/Schermafbeelding 2023-04-05 om 20.01.45.png')" coords="1050,928,1338,911,1336,732,1054,718" shape="poly">
+    <area target="_self" alt="if it smell bad it taste bad" title="if it smell bad it taste bad" onclick="showPopup('The Origin of the World', 'Gustave Courbet ', '', ' ', 'paintings/room19/Gustave Courbet - The Origin of the World - (MeisterDrucke-31655).jpeg')" coords="1915,887,2137,897,2139,694,1913,700" shape="poly">
+    <area target="_self" alt="grass" title="grass" href="room21.html" coords="1356,1332,1451,1421,1587,1441,1754,1443,1867,1423,1954,1368,1972,1318,1905,1240,1787,1213,1646,1207,1517,1232,1406,1274" shape="poly">
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

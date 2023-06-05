@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+  background-image: url("paintings/room34/g34 blur.png");}
+    #myImage {
+    opacity: 0;}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room34/room34.mp3"></audio>
+
+  
+<div class="container">
+<a href="room3.html"> <img id="left" src="paintings/arrow.png"> </a>
+<a href="artgallery1.html"> <img id="right" src="paintings/arrow.png"> </a>
+<a href="room35.html"> <img id="boven" src="paintings/arrow.png"> </a>
+<img id="canvas" src="paintings/golden canvas.png" class="center">
+  
+  <video autoplay loop muted play-inline class="center">
+  <source src="paintings/room34/g34 .mp4" type="video/mp4"> 
+ </video>
+  
+<img id="myImage" src="paintings/room34/frame.jpg" usemap="#g34map" alt="my image" class="center">
+</div>
+
+  
+<map name="g34map">
+    <area target="_self" alt="the dead miner" title="the dead miner" coords="196,724,576,734,623,1074,220,1101" shape="poly"
+      onclick="showPopup('The Dead Miner', 'Charles Christian Nahl', '1867', 'Drenthe', 'paintings/room34/dead miner.jpg')">
+  
+    <area target="_self" alt="Snow scene" title="Snow scene" coords="1623,797,2084,805,2053,1219,1564,1089" shape="poly"
+      onclick="showPopup('Snow scene in the black forrest', 'Carl Friedrich Wilhelm Trautschold', '1867', 'London', 'paintings/room34/snow scene.jpeg')">
+  
+    <area target="_self" alt="room23" title="room23" href="room35.html" coords="1091,888,1252,1202" shape="rect">
+
+  
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

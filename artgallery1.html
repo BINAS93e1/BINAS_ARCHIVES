@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+    <style>
+    body, html {
+    background-image: url("paintings/room1/g1\ blurr.png");}
+    #myImage {
+    opacity: 0;}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room1/g1 ambience.mp3"></audio>
+
+  
+<div class="container">
+<a href="room34.html"> <img id="left" src="paintings/arrow.png"> </a>
+<a href="room2.html"> <img id="right" src="paintings/arrow.png"> </a>
+<img id="canvas" src="paintings/golden canvas.png" class="center">
+  
+  <video autoplay loop muted play-inline class="center">
+  <source src="paintings/room1/g1 animated.mp4" type="video/mp4"> 
+ </video>
+  
+<img id="myImage" src="paintings/room1/frame g1.jpg" usemap="#g1map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g1map">
+    <area target="_self" alt="william turner" title="william turner" coords="226,777,723,767,792,1105,325,1381" shape="poly"
+      onclick="showPopup('Returning from the Ball (St Martha)', 'William Turner', '1845', 'United Kingdom', 'paintings/room1/williamturner.jpg')">
+  
+    <area target="_self" alt="gogh" title="gogh" coords="775,772,1027,756,1085,950,818,986" shape="poly"
+  onclick="showPopup('Farmhouse in Provence', 'Vincent van Gogh', 'june 1888', 'Netherlands', 'paintings/room1/gogh.jpg')">
+  
+    <area target="_self" alt="the coming storm" title="the coming storm"  coords="1297,754,1250,943,1488,1007,1554,767" shape="poly" onclick="showPopup('The Coming Storm', 'Albert Bierstadt', '1869', 'United States of America', 'paintings/room1/storm.jpg')">
+  
+    <area target="_self" alt="Zar Iwam der schreck" title="Zar Iwam der schreck" coords="1576,713,1446,1162,1876,1277,1999,749" shape="poly" onclick="showPopup('Iwan der Schreckliche und sein Sohn', 'Ilja Repin', '1883', 'Moskau', 'paintings/room1/iwan.jpg')">
+  
+    <area target="_self" alt="VOGEL" title="VOGEL" onclick="playSound('paintings/room1/birb lowq.mp3')" coords="435,400,62" shape="circle">
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+	<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+
+  
+  
+</body>
+</html>

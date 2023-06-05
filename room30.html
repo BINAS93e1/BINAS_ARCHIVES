@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body,
+    html {
+      background-image: url("paintings/room30/g30 blur.png");
+    }
+  </style>
+</head>
+
+<body>
+
+  <audio autoplay loop src="paintings/room30/room30.mp3"></audio>
+
+
+  <div class="container">
+
+    <a href="room29.html"> <img id="right" src="paintings/arrow.png"> </a>
+    <a href="room31.html"> <img id="boven" src="paintings/arrow.png"> </a>
+
+    <img id="myImage" src="paintings/room30/room30.png" usemap="#g12map" alt="my image" class="center">
+
+  </div>
+
+
+  <map name="g12map">
+    <area target="_self" alt="portrait" title="portrait" coords="263,681,416,689,410,924,255,930"
+      shape="poly"
+      onclick="showPopup('Portrait of a Woman', 'Robert Campin', '1430', '-', 'paintings/room30/portrait.jpg')">
+
+    <area target="_self" alt="sabbath" title="sabbath" coords="740,137,1595,0,2249,2,2243,548,744,636" shape="poly"
+      onclick="showPopup('Witches sabbath', '-', '1821', '-', 'paintings/room30/sabbath.jpg')">
+
+    <area target="" alt="room31" title="room31" href="room31.html" coords="1633,660,2038,636,2044,1425,1645,1405"
+      shape="poly">
+
+  </map>
+
+  <div id="popup">
+    <div class="popup-content">
+      <img class="popup-image" src="">
+      <div class="painting-info">
+        <h2 id="painting-name"></h2>
+        <p><strong>Artist:</strong> <span id="artist"></span></p>
+        <p><strong>Year of making:</strong> <span id="year"></span></p>
+        <p><strong>Origin of making:</strong> <span id="origin"></span></p>
+      </div>
+      <span class="close-button" onclick="closePopup()">&times;</span>
+    </div>
+  </div>
+
+  <script src="paintings.js"></script>
+  <script src="imagemapresizer.js"></script>
+
+</body>
+
+</html>

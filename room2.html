@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+    <style>
+    body, html {
+    background-image: url("paintings/room2/g2\ blurr.png");}
+    #myImage {
+    opacity: 0;}
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room2/g2 ambience.mp3"></audio>
+
+  
+<div class="container">
+<a href="artgallery1.html"> <img id="left" src="paintings/arrow.png"> </a>
+<a href="room3.html"> <img id="right" src="paintings/arrow.png"> </a>
+<img id="canvas" src="paintings/golden canvas.png" class="center">
+  
+  <video autoplay loop muted play-inline class="center">
+  <source src="paintings/room2/g2 animated.mp4" type="video/mp4"> 
+ </video>
+  
+<img id="myImage" src="paintings/room2/g2 frame.jpg" usemap="#g2map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g2map">
+     <area target="_self" alt="p1" title="p1" coords="224,666,522,666,653,1077,315,1145" shape="poly" onclick="showPopup('Kate 0/7', 'Daniel Murtagh', '-', '-', 'paintings/room2/kate1.jpg')">
+  
+    <area target="_self" alt="p2" title="p2" coords="699,865,705,1117,1095,1093,1019,867" shape="poly" onclick="showPopup('Feldblumen in einer Kiepe', 'Marta Hartung', '1917', 'Germany', 'paintings/room2/Feldblumen in einer Kiepe.jpg')">
+  
+    <area target="_self" alt="p3" title="p3" coords="1665,692,1544,1123,1834,1207,1917,734" shape="poly" onclick="showPopup('Kate 5/7', 'Daniel Murtagh', '-', '-', 'paintings/room2/kate2.jpg')">
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+	<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>

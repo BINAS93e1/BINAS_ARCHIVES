@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+    <style>
+
+    body, html {
+    background-image: url("paintings/room3/g3\ blurr.png");}
+    #myImage {
+    opacity: 0;}
+
+    #message {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Georgia, serif;
+      font-size: 2500%;
+      color: red;
+      z-index: 9999;
+    }
+  </style>
+  <script>
+     function stopAllAudio() {
+      var audioElements = document.getElementsByTagName("audio");
+      for (var i = 0; i < audioElements.length; i++) {
+        audioElements[i].pause();
+        audioElements[i].currentTime = 0;
+      }
+    }
+    
+    function showErrorMessage() {
+      var messageElement = document.createElement("div");
+      messageElement.setAttribute("id", "message");
+      messageElement.innerHTML = "UH OH!";
+      document.body.appendChild(messageElement);
+
+      var audioElement = document.createElement("audio");
+      audioElement.src = "paintings/room3/arme kok.mp3";
+      audioElement.autoplay = true;
+      document.body.appendChild(audioElement);
+
+      setTimeout(function() {
+        window.location.href = "index.html";
+      }, 1000);
+    }
+  </script>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room3/g3 ambience.mp3"></audio>
+
+  
+<div class="container">
+<a href="room2.html"> <img id="left" src="paintings/arrow.png"> </a>
+<a href="room34.html"> <img id="right" src="paintings/arrow.png"> </a>
+<a href="room11.html"> <img id="onder" src="paintings/arrow.png"> </a>
+<img id="canvas" src="paintings/golden canvas.png" class="center">
+  
+  <video autoplay loop muted play-inline class="center">
+  <source src="paintings/room3/g3 animated.mp4" type="video/mp4"> 
+ </video>
+  
+<img id="myImage" src="paintings/room3/g3 frame.jpg" usemap="#g3map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g3map">
+      <area target="_self" alt="p1" title="p1" coords="73,284,65,626,347,626,357,294" shape="poly" onclick="showPopup('A Eurasian eagle-owl', 'Dirk Valkenburg', '-', 'Netherlands', 'paintings/room3/owl.jpg')">
+  
+    <area target="_self" alt="p2" title="p2" coords="619,386,621,825,987,805,943,384" shape="poly" onclick="showPopup('Carcass of Beef', 'Chaim Soutine', '1924', 'France', 'paintings/room3/pig.jpg')">
+  
+    <area target="_self" alt="p3" title="p3" coords="1315,533,1230,980,1669,1038,1685,541" shape="poly" onclick="showPopup('Witches Sabbath', 'Francisco Goya', '1797', 'Spain', 'paintings/room3/witch.jpg')">
+  
+    <area target="_self" alt="p4" title="p4" coords="1981,313,1979,556,2142,554,2138,313" shape="poly" onclick="showPopup('The Flea-Catcher ', 'Gerard ter Borch', '1655', 'Netherlands', 'paintings/room3/boy.png')">
+  
+    <area target="_self" alt="uh oh!" title="uh oh!" coords="1715,156,1651,536,1689,538,1685,631,1758,617" shape="poly" onclick="showErrorMessage()">
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+  
+</body>
+</html>

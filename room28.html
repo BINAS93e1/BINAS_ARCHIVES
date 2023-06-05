@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BINAS ARCHIVES</title>
+  <link rel="stylesheet" href="room.css">
+  <script src="soundeffectplayer.js"></script>
+  <style>
+    body, html {
+  background-image: url("paintings/room28/g28 blur.png");
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay loop src="paintings/room28/room28.mp3"></audio>
+
+  
+<div class="container">
+<a href="room29.html"> <img id="left" src="paintings/arrow.png"> </a>
+<a href="room13.html"> <img id="right" src="paintings/arrow.png"> </a>
+  
+<img id="myImage" src="paintings/room28/room28.png" usemap="#g12map" alt="my image" class="center">
+  
+</div>
+
+  
+<map name="g12map">
+     <<area target="_self" alt="monet" title="monet" onclick="showPopup('The Magpie ', 'Claude Monet', '1869', '', 'paintings/room28/Claude Monet - The Magpie 1869  - (MeisterDrucke-45176).jpeg')" coords="122,952,112,549,710,559,710,835,613,809,541,809,499,861,442,891,356,923,239,954" shape="poly">
+    <area target="_self" alt="goya" title="goya" onclick="showPopup('atropos-the-fates-black-painting', 'goya', '', '', 'paintings/room28/atropos-the-fates-black-painting-2298747258.jpeg)" coords="1235,956,1219,515,2225,283,2203,1079" shape="poly">
+    <area target="_self" alt="turd" title="turd" onclick="showPopup('tur', 'Tracey Emin', '', '', 'paintings/room28/image.png')" coords="263,1061,338,1097,378,1095,386,1137,410,1161,470,1161,479,1103,545,1105,591,1083,654,1073,694,1038,720,998,752,978,764,944,778,912,756,859,694,859,642,863,615,837,557,843,474,908,380,932,338,954,297,972,267,1004" shape="poly">
+  
+</map>
+
+<div id="popup">
+		<div class="popup-content">
+			<img class="popup-image" src="">
+			<div class="painting-info">
+				<h2 id="painting-name"></h2>
+				<p><strong>Artist:</strong> <span id="artist"></span></p>
+				<p><strong>Year of making:</strong> <span id="year"></span></p>
+				<p><strong>Origin of making:</strong> <span id="origin"></span></p>
+			</div>
+			<span class="close-button" onclick="closePopup()">&times;</span>
+		</div>
+	</div>
+
+<script src="paintings.js"></script>
+<script src="imagemapresizer.js"></script>
+  
+</body>
+</html>
